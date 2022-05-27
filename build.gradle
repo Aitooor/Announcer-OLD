@@ -74,7 +74,7 @@ dependencies {
     implementation 'net.silthus.configlib:configlib-bungee:2.6.0'
 
     implementation 'me.yushust.message:core:6.1.0'
-    implementation 'me.yushust.message:sourcetype-bukkit-yml:6.1.0'
+    implementation 'me.yushust.message:sourcetype-bukkit-yml:7.0.0'
     implementation 'me.yushust.message:sourcetype-bungee-yml:7.0.0'
 }
 
