@@ -1,0 +1,4 @@
+added:
+  es: "Set spanish message to: &f{msg}"
+  en: "Set english message to: &f{msg}"
+config-reloaded: "&aConfig reloaded!"
