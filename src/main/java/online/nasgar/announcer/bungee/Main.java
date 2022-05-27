@@ -14,6 +14,7 @@ import net.md_5.bungee.api.plugin.Plugin;
 import online.nasgar.announcer.bungee.announcements.BungeeAnnouncementsManager;
 import online.nasgar.announcer.bungee.commands.BungeeAnnouncerCommand;
 import online.nasgar.announcer.bungee.config.Configuration;
+import online.nasgar.announcer.common.Announcer;
 import online.nasgar.announcer.common.utils.Utils;
 
 public final class Main extends Plugin {
@@ -61,6 +62,8 @@ public final class Main extends Plugin {
                 );
 
         messageHandler = MessageHandler.of(messageProvider);
+
+        new Announcer(getAnnouncementsManager());
 
         commands();
     }

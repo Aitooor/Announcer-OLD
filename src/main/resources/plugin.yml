@@ -1,5 +1,0 @@
-name: Announcer
-version: '${project.version}'
-api-version: 1.18
-main: online.nasgar.announcer.bukkit.Main
-description: Announcer plugin for Nasgar Network
