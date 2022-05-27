@@ -16,6 +16,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+//TODO: Hacer auto-announcements
 public final class Main extends JavaPlugin {
 
     @Getter
