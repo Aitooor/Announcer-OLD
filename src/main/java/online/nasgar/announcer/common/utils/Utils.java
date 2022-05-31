@@ -1,10 +1,6 @@
 package online.nasgar.announcer.common.utils;
 
 import net.md_5.bungee.api.ChatColor;
-import net.md_5.bungee.api.connection.ProxiedPlayer;
-import online.nasgar.announcer.bungee.Main;
-
-import java.util.Random;
 
 public class Utils {
 
