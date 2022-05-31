@@ -9,7 +9,6 @@ import me.yushust.message.bukkit.BukkitMessageAdapt;
 import me.yushust.message.source.MessageSourceDecorator;
 import online.nasgar.announcer.bukkit.announcements.BukkitAnnouncementsManager;
 import online.nasgar.announcer.bukkit.commands.BukkitAnnouncerCommand;
-import online.nasgar.announcer.bukkit.config.Announcements;
 import online.nasgar.announcer.bukkit.config.Configuration;
 import online.nasgar.announcer.common.utils.Utils;
 import org.bukkit.ChatColor;
@@ -39,6 +38,11 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         configuration = new Configuration();
         configuration.loadAndSave();
+
+        if (configuration.isPlaceholderApi() && getServer().getPluginManager().getPlugin("PlaceholderAPI") == null) {
+            getLogger().severe("[Announcer] > PlaceholderAPI is not installed, disabling plugin.");
+            setEnabled(false);
+        }
 
         announcementsManager = new BukkitAnnouncementsManager();
 
