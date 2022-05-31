@@ -9,6 +9,7 @@ import me.yushust.message.bukkit.BukkitMessageAdapt;
 import me.yushust.message.source.MessageSourceDecorator;
 import online.nasgar.announcer.bukkit.announcements.BukkitAnnouncementsManager;
 import online.nasgar.announcer.bukkit.commands.BukkitAnnouncerCommand;
+import online.nasgar.announcer.bukkit.config.Announcements;
 import online.nasgar.announcer.bukkit.config.Configuration;
 import online.nasgar.announcer.common.utils.Utils;
 import org.bukkit.ChatColor;
@@ -16,7 +17,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-//TODO: Hacer auto-announcements
 public final class Main extends JavaPlugin {
 
     @Getter
@@ -57,7 +57,7 @@ public final class Main extends JavaPlugin {
                             config.specify(CommandSender.class)
                                     .setLinguist(commandSender -> "en")
                                     .setMessageSender((sender, mode, message) -> sender.sendMessage(message));
-                            config.addInterceptor(Utils::formatWithPrefix);
+                            config.addInterceptor(m -> Utils.formatWithPrefix(m, configuration.getPrefix()));
                         }
                 );
 

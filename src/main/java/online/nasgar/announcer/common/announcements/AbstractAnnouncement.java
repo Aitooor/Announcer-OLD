@@ -1,19 +1,14 @@
 package online.nasgar.announcer.common.announcements;
 
-import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.List;
-
+@Getter @Setter
 public abstract class AbstractAnnouncement {
 
-    @Getter
     private final String id;
-    @Getter @Setter
-    private String msgEs;
-    @Getter @Setter
-    private String msgEn;
+    String msgEn;
+    String msgEs;
 
     public AbstractAnnouncement(String id) {
         this.id = id;
