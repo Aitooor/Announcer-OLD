@@ -1,4 +1,0 @@
-name: Announcer
-version: '${project.version}'
-main: online.nasgar.announcer.bungee.Main
-description: Announcer plugin for Nasgar Network

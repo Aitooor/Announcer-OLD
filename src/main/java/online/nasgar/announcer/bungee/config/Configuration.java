@@ -10,16 +10,18 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
+@Getter
 @Comment({"",
         "                       Plugin made by:",
         "                          Vicen621"})
 public class Configuration extends YamlConfiguration {
 
-    @Getter
     @Comment({"", "Prefix of the announcement"})
-    private String prefix = "&8[&cAnnouncer&8] » &f";
+    private String prefix = "&8[&cAnnouncer&8] > &f";
 
-    @Getter
+    @Comment({"", "Whether to display announcements in the console"})
+    private boolean consoleBroadcast = true;
+
     @Comment({"", "List of worlds where the sound will not be played"})
     private List<String> deactivatedServers = Collections.singletonList("test");
 

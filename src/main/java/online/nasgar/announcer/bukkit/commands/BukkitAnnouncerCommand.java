@@ -31,7 +31,7 @@ public class BukkitAnnouncerCommand extends BaseCommand {
     public void onEnglish(CommandSender sender, String message) {
         AbstractAnnouncement announcement = Main.getAnnouncementsManager().getAnnouncement(sender.getName());
         announcement.setMsgEn(message);
-       
+
         Main.getMessageHandler().sendReplacing(sender, "added.en", "{msg}", message);
     }
 
@@ -45,8 +45,10 @@ public class BukkitAnnouncerCommand extends BaseCommand {
     @Subcommand("reload|rl")
     @Description("Reloads the Announcer plugin config")
     public void onReload(CommandSender sender) {
-       Main.getConfiguration().load();
+        Main.getConfiguration().load();
+        Main.getAnnouncements().load();
+        Main.restartAnnouncer();
 
-       Main.getMessageHandler().send(sender, "config-reloaded");
+        Main.getMessageHandler().send(sender, "config-reloaded");
     }
 }
