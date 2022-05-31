@@ -14,10 +14,11 @@ public class BungeeAnnouncement extends AbstractAnnouncement {
     @Override
     public void execute() {
         for (ProxiedPlayer p : Main.getInstance().getProxy().getPlayers()) {
-            if (!BungeeUtils.isInBlacklistedServers(p))
-                p.sendMessage(Utils.format(Main.getConfiguration().getPrefix() +
-                        (p.getLocale().getLanguage().equalsIgnoreCase("es") ?
-                                this.getMsgEs() : this.getMsgEn())));
+            if (!BungeeUtils.isInBlacklistedServers(p)) {
+                String msg = p.getLocale().getLanguage().equalsIgnoreCase("es") ? this.getMsgEs() : this.getMsgEn();
+                p.sendMessage(Utils.formatWithPrefix(msg, Main.getConfiguration().getPrefix()));
+            }
         }
+        Main.getInstance().getLogger().info(Utils.format(this.getMsgEn()));
     }
 }
