@@ -12,7 +12,8 @@ import online.nasgar.announcer.common.announcements.AbstractAnnouncement;
 public class BungeeAnnouncerCommand extends BaseCommand {
 
     @Default
-    @HelpCommand @CatchUnknown
+    @HelpCommand
+    @CatchUnknown
     public void onHelp(CommandSender sender, @Name("Command Help") CommandHelp help) {
         help.showHelp();
     }
@@ -44,8 +45,10 @@ public class BungeeAnnouncerCommand extends BaseCommand {
     @Subcommand("reload|rl")
     @Description("Reloads the Announcer plugin config")
     public void onReload(CommandSender sender) {
-       Main.getConfiguration().load();
+        Main.getConfiguration().load();
+        Main.getAnnouncements().load();
+        Main.restartAnnouncer();
 
-       Main.getMessageHandler().send(sender, "config-reloaded");
+        Main.getMessageHandler().send(sender, "config-reloaded");
     }
 }
