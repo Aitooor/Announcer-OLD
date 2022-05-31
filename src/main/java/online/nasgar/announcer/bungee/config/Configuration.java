@@ -17,7 +17,7 @@ import java.util.List;
 public class Configuration extends YamlConfiguration {
 
     @Comment({"", "Prefix of the announcement"})
-    private String prefix = "&8[&cAnnouncer&8] » &f";
+    private String prefix = "&8[&cAnnouncer&8] > &f";
 
     @Comment({"", "Whether to display announcements in the console"})
     private boolean consoleBroadcast = true;
