@@ -15,13 +15,13 @@ import java.io.File;
 public class Configuration extends BukkitYamlConfiguration {
 
     @Comment({"", "Prefix of the announcement"})
-    private String prefix = "&8[&cAnnouncer&8] » &f";
+    private String prefix = "&8[&cAnnouncer&8] > &f";
 
     @Comment({"", "Whether to display announcements in the console"})
     private boolean consoleBroadcast = true;
 
     @Comment({"", "Whether to use the PlaceholderAPI"})
-    private boolean placeholderAPI = true;
+    private boolean placeholderApi = true;
 
     public Configuration() {
         super(
