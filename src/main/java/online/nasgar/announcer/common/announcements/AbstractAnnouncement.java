@@ -4,13 +4,15 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.List;
+
 public abstract class AbstractAnnouncement {
 
-    @Getter(value = AccessLevel.PUBLIC)
+    @Getter
     private final String id;
-    @Getter(value = AccessLevel.PUBLIC) @Setter(value = AccessLevel.PUBLIC)
+    @Getter @Setter
     private String msgEs;
-    @Getter(value = AccessLevel.PUBLIC) @Setter(value = AccessLevel.PUBLIC)
+    @Getter @Setter
     private String msgEn;
 
     public AbstractAnnouncement(String id) {
