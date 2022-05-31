@@ -83,7 +83,6 @@ dependencies {
 shadowJar {
     minimize()
     classifier = ''
-    destinationDir = file(project.property("outputDir"))
     dependencies {
         include(dependency('co.aikar:acf-bungee:'))
         include(dependency('co.aikar:acf-paper:'))
