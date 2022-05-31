@@ -7,6 +7,7 @@ buildscript {
 plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'kr.entree.spigradle' version '2.4.2'
+    id 'kr.entree.spigradle.bungee' version '2.4.2'
     id 'io.freefair.lombok' version '6.4.3'
     id 'java'
     id 'jacoco'
@@ -30,11 +31,18 @@ ext {
 group project.property("group")
 
 spigot {
-    name = project.property("pluginName")
-    main = "online.nasgar.announcer.bukkit.Main"
-    authors = [project.property("author")]
-    apiVersion = project.property("apiVersion")
-    load = STARTUP
+    name project.property("pluginName")
+    authors [project.property("author")]
+    version project.property("version")
+    apiVersion project.property("apiVersion")
+    load STARTUP
+}
+
+bungee {
+    name project.property("pluginName")
+    description 'Announcer plugin for Nasgar Network'
+    version project.property("version")
+    author project.property("author")
 }
 
 compileJava {
@@ -49,8 +57,8 @@ archivesBaseName = project.property("pluginName")
 repositories {
     mavenLocal()
     mavenCentral()
-    spigot()
     jitpack()
+    spigot()
     maven { url = 'https://repo.aikar.co/content/groups/aikar/' }
     maven { url = 'https://repo.dmulloy2.net/repository/public/' }
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/public/' }
@@ -63,8 +71,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly 'net.md-5:bungeecord-api:1.18-R0.1-SNAPSHOT'
-    implementation spigot(mcVersion)
+    compileOnly  spigot(mcVersion)
+    compileOnly  "net.md-5:bungeecord-api:${mcVersion}-R0.1-SNAPSHOT"
 
     // Annotation Command Framework: https://github.com/aikar/commands
     implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
@@ -79,7 +87,9 @@ dependencies {
 }
 
 shadowJar {
+    minimize()
     classifier = ''
+    destinationDir = file(project.property("outputDir"))
     dependencies {
         include(dependency('co.aikar:acf-bungee:'))
         include(dependency('co.aikar:acf-paper:'))
