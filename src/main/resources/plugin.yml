@@ -3,4 +3,4 @@ main: 'online.nasgar.announcer.bukkit.Main'
 version: '${project.version}'
 author: 'Vicen621'
 api-version: 1.18
-softdepend: [PlaceholderAPI]
+softdepend: [ PlaceholderAPI ]

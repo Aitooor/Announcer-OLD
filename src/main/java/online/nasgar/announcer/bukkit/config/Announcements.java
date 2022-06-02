@@ -9,6 +9,7 @@ import online.nasgar.announcer.bukkit.Main;
 import online.nasgar.announcer.bukkit.announcements.AutoAnnouncement;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -26,10 +27,10 @@ public class Announcements extends BukkitYamlConfiguration {
                     "ExampleAnnouncement",
                     20,
                     "announcer.announcement.example",
-                    List.of("&8========================================",
+                    Arrays.asList("&8========================================",
                             " &c# &aThis is an example of announcement",
                             "&8========================================"),
-                    List.of("&8========================================",
+                    Arrays.asList("&8========================================",
                             " &c# &aEste es un ejemplo de un anuncio",
                             "&8========================================")));
 
@@ -41,7 +42,6 @@ public class Announcements extends BukkitYamlConfiguration {
     }
 
     public AutoAnnouncement getAnnouncementByRandom() {
-        ;
         return getAnnouncements().get(new Random().nextInt(getAnnouncements().size()));
     }
 }

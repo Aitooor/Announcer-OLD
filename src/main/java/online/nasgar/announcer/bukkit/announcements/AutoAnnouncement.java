@@ -36,7 +36,8 @@ public class AutoAnnouncement {
     }
 
     public void view(CommandSender viewer) {
-        if (viewer instanceof Player p) {
+        if (viewer instanceof Player) {
+            Player p = (Player) viewer;
             List<String> messages = p.getLocale().split("_")[0].equalsIgnoreCase("es") ? messagesEs : messagesEn;
             if (Main.getConfiguration().isPlaceholderApi())
                 messages = PlaceholderAPI.setPlaceholders(p, messages);

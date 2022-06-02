@@ -33,8 +33,10 @@ public class AutoAnnouncement {
         this.messagesEs = messagesEs;
     }
 
+    @SuppressWarnings("deprecation")
     public void view(CommandSender viewer) {
-        if (viewer instanceof ProxiedPlayer p) {
+        if (viewer instanceof ProxiedPlayer) {
+            ProxiedPlayer p = (ProxiedPlayer) viewer;
             List<String> messages = p.getLocale().getLanguage().equalsIgnoreCase("es") ? messagesEs : messagesEn;
             messages.forEach(m -> viewer.sendMessage(Utils.format(m)));
         } else {
