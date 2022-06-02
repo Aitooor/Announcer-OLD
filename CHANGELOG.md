@@ -1,3 +1,11 @@
+## [1.1.1](https://github.com/Nasgar-Network/Announcer/compare/v1.1.0...v1.1.1) (2022-06-02)
+
+
+### Bug Fixes
+
+* Changed BukkitYaml to Yaml in bungee module ([2da4a1e](https://github.com/Nasgar-Network/Announcer/commit/2da4a1e7d177c4118fe18fd502e211cbd28c3d01))
+* fixes for java 8 ([35781cd](https://github.com/Nasgar-Network/Announcer/commit/35781cd127f2665f52464f0395dd519045103549))
+
 # [1.1.0](https://github.com/Nasgar-Network/Announcer/compare/v1.0.0...v1.1.0) (2022-05-31)
 
 
