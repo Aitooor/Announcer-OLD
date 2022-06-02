@@ -2,7 +2,7 @@ package online.nasgar.announcer.bungee.config;
 
 import de.exlll.configlib.annotation.Comment;
 import de.exlll.configlib.annotation.ElementType;
-import de.exlll.configlib.configs.yaml.BukkitYamlConfiguration;
+import de.exlll.configlib.configs.yaml.YamlConfiguration;
 import de.exlll.configlib.format.FieldNameFormatters;
 import lombok.Getter;
 import online.nasgar.announcer.bungee.Main;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Random;
 
 @Getter
-public class Announcements extends BukkitYamlConfiguration {
+public class Announcements extends YamlConfiguration {
     @Comment({"", "Whether to broadcast the announcement randomly",
             "When enabled, the announcements in the list will be broadcast randomly"})
     private boolean randomBroadcast = false;
@@ -37,7 +37,7 @@ public class Announcements extends BukkitYamlConfiguration {
     public Announcements() {
         super(
                 new File(Main.getInstance().getDataFolder(), "announcements.yml").toPath(),
-                BukkitYamlProperties.builder().setFormatter(FieldNameFormatters.LOWER_UNDERSCORE).build()
+                YamlProperties.builder().setFormatter(FieldNameFormatters.LOWER_UNDERSCORE).build()
         );
     }
 
