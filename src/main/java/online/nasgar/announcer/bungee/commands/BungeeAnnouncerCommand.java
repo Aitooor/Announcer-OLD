@@ -7,7 +7,7 @@ import net.md_5.bungee.api.CommandSender;
 import online.nasgar.announcer.bungee.Main;
 import online.nasgar.announcer.common.announcements.AbstractAnnouncement;
 
-@CommandAlias("announcer|announce")
+@CommandAlias("bannouncer|bannounce")
 @CommandPermission("announcer.admin")
 public class BungeeAnnouncerCommand extends BaseCommand {
 
