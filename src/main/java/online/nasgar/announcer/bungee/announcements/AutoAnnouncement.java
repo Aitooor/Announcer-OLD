@@ -35,6 +35,7 @@ public class AutoAnnouncement {
 
     @SuppressWarnings("deprecation")
     public void view(CommandSender viewer) {
+        if (permission != null && !viewer.hasPermission(permission)) return;
         if (viewer instanceof ProxiedPlayer) {
             ProxiedPlayer p = (ProxiedPlayer) viewer;
             List<String> messages = p.getLocale().getLanguage().equalsIgnoreCase("es") ? messagesEs : messagesEn;
