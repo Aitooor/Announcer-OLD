@@ -2,3 +2,4 @@ added:
   es: "Mensaje en español establecido a: &f{msg}"
   en: "Mensaje en ingles establecido a: &f{msg}"
 config-reloaded: "&aConfiguracion recargada con exito!"
+prefix: "&b&lANUNCIO&r &f"

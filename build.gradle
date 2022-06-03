@@ -50,10 +50,10 @@ repositories {
     mavenCentral()
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
     maven { url 'https://jitpack.io' }
-    maven { url = 'https://repo.aikar.co/content/groups/aikar/' }
-    maven { url = 'https://repo.dmulloy2.net/repository/public/' }
-    maven { url = 'https://hub.spigotmc.org/nexus/content/repositories/public/' }
-    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    maven { url 'https://repo.aikar.co/content/groups/aikar/' }
+    maven { url 'https://repo.dmulloy2.net/repository/public/' }
+    maven { url 'https://hub.spigotmc.org/nexus/content/repositories/public/' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
     maven {
         name = 'sonatype'
         url = 'https://oss.sonatype.org/content/groups/public/'
@@ -70,8 +70,12 @@ dependencies {
     implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
     implementation "co.aikar:acf-bungee:0.5.1-SNAPSHOT"
 
-    implementation 'net.silthus.configlib:configlib-bukkit:2.6.0'
-    implementation 'net.silthus.configlib:configlib-bungee:2.6.0'
+    implementation('net.silthus.configlib:configlib-bukkit:2.6.0') {
+        exclude group: 'org.spigotmc', module: 'spigot-api'
+    }
+    implementation('net.silthus.configlib:configlib-bungee:2.6.0') {
+        exclude group: 'net.md-5.bungee', module: 'bungeecord-api'
+    }
 
     implementation 'me.yushust.message:core:7.0.0'
     implementation 'me.yushust.message:sourcetype-bukkit-yml:7.0.0'

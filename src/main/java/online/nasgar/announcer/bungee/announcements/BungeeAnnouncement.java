@@ -15,11 +15,12 @@ public class BungeeAnnouncement extends AbstractAnnouncement {
         for (ProxiedPlayer p : Main.getInstance().getProxy().getPlayers()) {
             if (!isInBlacklistedServers(p)) {
                 String msg = p.getLocale().getLanguage().equalsIgnoreCase("es") ? this.getMsgEs() : this.getMsgEn();
-                p.sendMessage(Utils.formatWithPrefix(msg, Main.getConfiguration().getPrefix()));
+                p.sendMessage(Utils.formatWithPrefix(msg, Main.getMessageHandler().get(p, "prefix")));
             }
         }
 
-        Main.getInstance().getLogger().info(Utils.format(this.getMsgEn()));
+        if (Main.getConfiguration().isConsoleBroadcast())
+            Main.getInstance().getLogger().info(Utils.formatWithPrefix(this.getMsgEn(), Main.getMessageHandler().getMessage("prefix")));
     }
 
     private boolean isInBlacklistedServers(ProxiedPlayer p) {

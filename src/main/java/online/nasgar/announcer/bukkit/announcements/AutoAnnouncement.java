@@ -36,6 +36,7 @@ public class AutoAnnouncement {
     }
 
     public void view(CommandSender viewer) {
+        if (permission != null && !viewer.hasPermission(permission)) return;
         if (viewer instanceof Player) {
             Player p = (Player) viewer;
             List<String> messages = p.getLocale().split("_")[0].equalsIgnoreCase("es") ? messagesEs : messagesEn;

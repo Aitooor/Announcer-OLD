@@ -87,7 +87,7 @@ public final class Main extends JavaPlugin {
                             config.specify(CommandSender.class)
                                     .setLinguist(commandSender -> "en")
                                     .setMessageSender((sender, mode, message) -> sender.sendMessage(message));
-                            config.addInterceptor(m -> Utils.formatWithPrefix(m, configuration.getPrefix()));
+                            config.addInterceptor(m -> Utils.formatWithPrefix(m, getMessageHandler().getMessage("prefix")));
                         }
                 );
 

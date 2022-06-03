@@ -18,8 +18,9 @@ public class BukkitAnnouncement extends AbstractAnnouncement {
             String msg = p.getLocale().split("_")[0].equalsIgnoreCase("es") ? this.getMsgEs() : this.getMsgEn();
             if (Main.getConfiguration().isPlaceholderApi())
                 msg = PlaceholderAPI.setPlaceholders(p, msg);
-            p.sendMessage(Utils.formatWithPrefix(msg, Main.getConfiguration().getPrefix()));
+            p.sendMessage(Utils.formatWithPrefix(msg, Main.getMessageHandler().get(p, "prefix")));
         }
-        Bukkit.getConsoleSender().sendMessage(Utils.formatWithPrefix(this.getMsgEn(), Main.getConfiguration().getPrefix()));
+        if (Main.getConfiguration().isConsoleBroadcast())
+            Bukkit.getConsoleSender().sendMessage(Utils.formatWithPrefix(this.getMsgEn(), Main.getMessageHandler().getMessage("prefix")));
     }
 }

@@ -14,11 +14,8 @@ import java.io.File;
         "                          Vicen621"})
 public class Configuration extends BukkitYamlConfiguration {
 
-    @Comment({"", "Prefix of the announcement"})
-    private String prefix = "&8[&cAnnouncer&8] > &f";
-
     @Comment({"", "Whether to display announcements in the console"})
-    private boolean consoleBroadcast = true;
+    private boolean consoleBroadcast = false;
 
     @Comment({"", "Whether to use the PlaceholderAPI"})
     private boolean placeholderApi = true;
