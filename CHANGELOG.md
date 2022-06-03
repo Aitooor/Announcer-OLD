@@ -1,3 +1,11 @@
+## [1.1.2](https://github.com/Nasgar-Network/Announcer/compare/v1.1.1...v1.1.2) (2022-06-03)
+
+
+### Bug Fixes
+
+* moved the prefix to the lang files ([d782231](https://github.com/Nasgar-Network/Announcer/commit/d78223194d52a2c59e7176de4ba45fa07313c233))
+* updated to version 1.1.2 ([a6b164b](https://github.com/Nasgar-Network/Announcer/commit/a6b164b87d9c1e08f4f7f70013d5c7bd82eec924))
+
 ## [1.1.1](https://github.com/Nasgar-Network/Announcer/compare/v1.1.0...v1.1.1) (2022-06-02)
 
 
