@@ -78,7 +78,7 @@ dependencies {
     }
 
     implementation 'me.yushust.message:core:7.0.0'
-    implementation 'me.yushust.message:sourcetype-bukkit-yml:7.0.0'
+    implementation 'me.yushust.message:sourcetype-bukkit-yml:7.1.0'
     implementation 'me.yushust.message:sourcetype-bungee-yml:7.1.0'
 
     implementation 'me.clip:placeholderapi:2.11.2'
