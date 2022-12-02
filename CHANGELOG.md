@@ -1,3 +1,15 @@
+# [1.2.0](https://github.com/Nasgar-Network/Announcer/compare/v1.1.2...v1.2.0) (2022-12-02)
+
+
+### Bug Fixes
+
+* updated to version 1.2.0 [skip ci] ([25d5e18](https://github.com/Nasgar-Network/Announcer/commit/25d5e184d08c402ef6b316086157840a58cf90c5))
+
+
+### Features
+
+* added AutoAnnouncements with permissions [skip ci] ([d9ef250](https://github.com/Nasgar-Network/Announcer/commit/d9ef2507029a06dbac2a21081ea1978278b79bf7))
+
 ## [1.1.2](https://github.com/Nasgar-Network/Announcer/compare/v1.1.1...v1.1.2) (2022-06-03)
 
 
