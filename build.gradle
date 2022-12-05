@@ -77,7 +77,7 @@ dependencies {
         exclude group: 'net.md-5.bungee', module: 'bungeecord-api'
     }
 
-    implementation 'me.yushust.message:core:7.0.0'
+    implementation 'me.yushust.message:core:7.1.0'
     implementation 'me.yushust.message:sourcetype-bukkit-yml:7.1.0'
     implementation 'me.yushust.message:sourcetype-bungee-yml:7.1.0'
 
