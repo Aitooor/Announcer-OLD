@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/Nasgar-Network/Announcer/compare/v1.2.0...v1.2.1) (2022-12-12)
+
+
+### Bug Fixes
+
+* api-version to 1.13 ([06d0d75](https://github.com/Nasgar-Network/Announcer/commit/06d0d75256ccd8755fe7793d2d7d8ac4a508e7e5))
+
 # [1.2.0](https://github.com/Nasgar-Network/Announcer/compare/v1.1.2...v1.2.0) (2022-12-02)
 
 
