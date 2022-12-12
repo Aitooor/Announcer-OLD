@@ -64,7 +64,7 @@ repositories {
 
 dependencies {
     compileOnly "org.spigotmc:spigot-api:${mcVersion}-R0.1-SNAPSHOT"
-    compileOnly "net.md-5:bungeecord-api:${mcVersion}-R0.1-SNAPSHOT"
+    compileOnly "net.md-5:bungeecord-api:${bungeeVersion}-R0.1-SNAPSHOT"
 
     // Annotation Command Framework: https://github.com/aikar/commands
     implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
