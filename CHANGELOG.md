@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/Nasgar-Network/Announcer/compare/v1.2.2...v1.2.3) (2022-12-12)
+
+
+### Bug Fixes
+
+* java version ([ccbd245](https://github.com/Nasgar-Network/Announcer/commit/ccbd2457bfd5a0da786a7acd15d571534fcd4f6b))
+
 ## [1.2.2](https://github.com/Nasgar-Network/Announcer/compare/v1.2.1...v1.2.2) (2022-12-12)
 
 
