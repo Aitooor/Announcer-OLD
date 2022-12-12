@@ -1,3 +1,11 @@
+## [1.2.2](https://github.com/Nasgar-Network/Announcer/compare/v1.2.1...v1.2.2) (2022-12-12)
+
+
+### Bug Fixes
+
+* gradle.properties ([2d2a7bb](https://github.com/Nasgar-Network/Announcer/commit/2d2a7bbba079568e71355ac1e6d00601be91ac10))
+* gradle.properties and build.gradle ([30d69de](https://github.com/Nasgar-Network/Announcer/commit/30d69de66858f0cf43f83ff454061d542dcfdd81))
+
 ## [1.2.1](https://github.com/Nasgar-Network/Announcer/compare/v1.2.0...v1.2.1) (2022-12-12)
 
 
