@@ -6,6 +6,7 @@ import co.aikar.commands.annotation.*;
 import net.md_5.bungee.api.CommandSender;
 import online.nasgar.announcer.bungee.Main;
 import online.nasgar.announcer.common.announcements.AbstractAnnouncement;
+import online.nasgar.announcer.common.utils.Utils;
 
 @CommandAlias("bannouncer|bannounce")
 @CommandPermission("announcer.admin")
@@ -23,7 +24,8 @@ public class BungeeAnnouncerCommand extends BaseCommand {
     public void onSpanish(CommandSender sender, String message) {
         AbstractAnnouncement announcement = Main.getAnnouncementsManager().getAnnouncement(sender.getName());
         announcement.setMsgEs(message);
-        Main.getMessageHandler().sendReplacing(sender, "added.es", "{msg}", message);
+        sender.sendMessage(Utils.formatWithPrefix(Main.getMessageHandler().replacing(sender, "added.es", "{msg}", message),
+                Main.getMessageHandler().get(sender, "prefix")));
     }
 
     @Subcommand("en|ingles|english")
@@ -32,7 +34,8 @@ public class BungeeAnnouncerCommand extends BaseCommand {
         AbstractAnnouncement announcement = Main.getAnnouncementsManager().getAnnouncement(sender.getName());
         announcement.setMsgEn(message);
 
-        Main.getMessageHandler().sendReplacing(sender, "added.en", "{msg}", message);
+        sender.sendMessage(Utils.formatWithPrefix(Main.getMessageHandler().replacing(sender, "added.en", "{msg}", message),
+                Main.getMessageHandler().get(sender, "prefix")));
     }
 
     @Subcommand("execute")
@@ -49,6 +52,7 @@ public class BungeeAnnouncerCommand extends BaseCommand {
         Main.getAnnouncements().load();
         Main.restartAnnouncer();
 
-        Main.getMessageHandler().send(sender, "config-reloaded");
+        sender.sendMessage(Utils.formatWithPrefix(Main.getMessageHandler().get(sender, "config-reloaded"),
+                Main.getMessageHandler().get(sender, "prefix")));
     }
 }
