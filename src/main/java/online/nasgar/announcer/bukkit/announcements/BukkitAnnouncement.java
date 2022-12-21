@@ -21,6 +21,6 @@ public class BukkitAnnouncement extends AbstractAnnouncement {
             p.sendMessage(Utils.formatWithPrefix(msg, Main.getMessageHandler().get(p, "prefix")));
         }
         if (Main.getConfiguration().isConsoleBroadcast())
-            Bukkit.getConsoleSender().sendMessage(Utils.formatWithPrefix(this.getMsgEn(), Main.getMessageHandler().getMessage("prefix")));
+            Bukkit.getConsoleSender().sendMessage(Utils.formatWithPrefix(this.getMsgEn(), Main.getMessageHandler().get(Bukkit.getConsoleSender(), "prefix")));
     }
 }

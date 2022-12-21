@@ -5,6 +5,7 @@ import co.aikar.commands.CommandHelp;
 import co.aikar.commands.annotation.*;
 import online.nasgar.announcer.bukkit.Main;
 import online.nasgar.announcer.common.announcements.AbstractAnnouncement;
+import online.nasgar.announcer.common.utils.Utils;
 import org.bukkit.command.CommandSender;
 
 @CommandAlias("announcer|announce")
@@ -23,7 +24,8 @@ public class BukkitAnnouncerCommand extends BaseCommand {
     public void onSpanish(CommandSender sender, String message) {
         AbstractAnnouncement announcement = Main.getAnnouncementsManager().getAnnouncement(sender.getName());
         announcement.setMsgEs(message);
-        Main.getMessageHandler().sendReplacing(sender, "added.es", "{msg}", message);
+        sender.sendMessage(Utils.formatWithPrefix(Main.getMessageHandler().replacing(sender, "added.es", "{msg}", message),
+                Main.getMessageHandler().get(sender, "prefix")));
     }
 
     @Subcommand("en|ingles|english")
@@ -32,7 +34,8 @@ public class BukkitAnnouncerCommand extends BaseCommand {
         AbstractAnnouncement announcement = Main.getAnnouncementsManager().getAnnouncement(sender.getName());
         announcement.setMsgEn(message);
 
-        Main.getMessageHandler().sendReplacing(sender, "added.en", "{msg}", message);
+        sender.sendMessage(Utils.formatWithPrefix(Main.getMessageHandler().replacing(sender, "added.en", "{msg}", message),
+                Main.getMessageHandler().get(sender, "prefix")));
     }
 
     @Subcommand("execute")
@@ -49,6 +52,7 @@ public class BukkitAnnouncerCommand extends BaseCommand {
         Main.getAnnouncements().load();
         Main.restartAnnouncer();
 
-        Main.getMessageHandler().send(sender, "config-reloaded");
+        sender.sendMessage(Utils.formatWithPrefix(Main.getMessageHandler().get(sender, "config-reloaded"),
+                Main.getMessageHandler().get(sender, "prefix")));
     }
 }
