@@ -1,3 +1,11 @@
+## [1.2.4](https://github.com/Nasgar-Network/Announcer/compare/v1.2.3...v1.2.4) (2022-12-21)
+
+
+### Bug Fixes
+
+* fixed error where the prefix in console message is in the wrong language ([9b8e29c](https://github.com/Nasgar-Network/Announcer/commit/9b8e29cf0fed5fa1848f7978d1538872debbd0c7))
+* fixed error where trying to get the prefix in the nMessage decorator ([498b3a1](https://github.com/Nasgar-Network/Announcer/commit/498b3a131d9dd36e18184ae6e75669042b41b575))
+
 ## [1.2.3](https://github.com/Nasgar-Network/Announcer/compare/v1.2.2...v1.2.3) (2022-12-12)
 
 
