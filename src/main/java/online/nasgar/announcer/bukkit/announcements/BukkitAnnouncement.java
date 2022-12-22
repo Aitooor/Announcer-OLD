@@ -15,7 +15,7 @@ public class BukkitAnnouncement extends AbstractAnnouncement {
     @Override
     public void execute() {
         for (Player p : Bukkit.getOnlinePlayers()) {
-            String msg = p.getLocale().split("_")[0].equalsIgnoreCase("es") ? this.getMsgEs() : this.getMsgEn();
+            String msg = Main.getLocale(p).split("_")[0].equalsIgnoreCase("es") ? this.getMsgEs() : this.getMsgEn();
             if (Main.getConfiguration().isPlaceholderApi())
                 msg = PlaceholderAPI.setPlaceholders(p, msg);
             p.sendMessage(Utils.formatWithPrefix(msg, Main.getMessageHandler().get(p, "prefix")));

@@ -37,7 +37,7 @@ public final class Main extends JavaPlugin {
     private static BukkitAnnouncementsManager announcementsManager;
     @Getter
     private static MessageHandler messageHandler;
-    private iLocale locale;
+    private static iLocale locale;
     private static AnnouncerThread thread = null;
 
     public static void restartAnnouncer() {
@@ -88,13 +88,7 @@ public final class Main extends JavaPlugin {
                                 .get(),
                         config -> {
                             config.specify(Player.class)
-                                    .setLinguist(player -> {
-                                        try {
-                                            return locale.getLocale(player).split("_")[0];
-                                        } catch (Exception e) {
-                                            throw new RuntimeException(e);
-                                        }
-                                    })
+                                    .setLinguist(Main::getLocale)
                                     .setMessageSender((sender, mode, message) -> sender.sendMessage(message));
                             config.specify(CommandSender.class)
                                     .setLinguist(commandSender -> "en")
@@ -133,5 +127,13 @@ public final class Main extends JavaPlugin {
             locale = new LocaleSpigot();
         else
             locale = new LocaleCraftBukkit();
+    }
+
+    public static String getLocale(Player p) {
+        try {
+            return locale.getLocale(p);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 }
