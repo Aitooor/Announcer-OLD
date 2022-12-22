@@ -20,9 +20,7 @@ public class AnnouncerThread extends Thread {
         while (isRunning()) {
             try {
                 if (getConfig().isRandomBroadcast()) {
-                    if (isRunning()) {
-                        getConfig().getAnnouncementByRandom().broadcast(this);
-                    }
+                    getConfig().getAnnouncementByRandom().broadcast(this);
                 } else {
                     getConfig().getAnnouncements().stream()
                             .filter(running -> isRunning()).forEach(a -> a.broadcast(this));

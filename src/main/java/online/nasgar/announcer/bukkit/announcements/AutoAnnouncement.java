@@ -39,7 +39,7 @@ public class AutoAnnouncement {
         if (permission != null && !viewer.hasPermission(permission)) return;
         if (viewer instanceof Player) {
             Player p = (Player) viewer;
-            List<String> messages = p.getLocale().split("_")[0].equalsIgnoreCase("es") ? messagesEs : messagesEn;
+            List<String> messages = Main.getLocale(p).split("_")[0].equalsIgnoreCase("es") ? messagesEs : messagesEn;
             if (Main.getConfiguration().isPlaceholderApi())
                 messages = PlaceholderAPI.setPlaceholders(p, messages);
             messages.forEach(m -> viewer.sendMessage(Utils.format(m)));
