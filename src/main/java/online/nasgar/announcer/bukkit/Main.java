@@ -12,7 +12,11 @@ import online.nasgar.announcer.bukkit.announcements.BukkitAnnouncementsManager;
 import online.nasgar.announcer.bukkit.commands.BukkitAnnouncerCommand;
 import online.nasgar.announcer.bukkit.config.Announcements;
 import online.nasgar.announcer.bukkit.config.Configuration;
+import online.nasgar.announcer.bukkit.nms.LocaleCraftBukkit;
+import online.nasgar.announcer.bukkit.nms.LocaleSpigot;
+import online.nasgar.announcer.bukkit.nms.iLocale;
 import online.nasgar.announcer.common.utils.Utils;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -33,6 +37,7 @@ public final class Main extends JavaPlugin {
     private static BukkitAnnouncementsManager announcementsManager;
     @Getter
     private static MessageHandler messageHandler;
+    private iLocale locale;
     private static AnnouncerThread thread = null;
 
     public static void restartAnnouncer() {
@@ -72,6 +77,7 @@ public final class Main extends JavaPlugin {
 
         announcementsManager = new BukkitAnnouncementsManager();
 
+        this.setupLocale();
         MessageProvider messageProvider = MessageProvider
                 .create(
                         MessageSourceDecorator
@@ -82,7 +88,13 @@ public final class Main extends JavaPlugin {
                                 .get(),
                         config -> {
                             config.specify(Player.class)
-                                    .setLinguist(player -> player.getLocale().split("_")[0])
+                                    .setLinguist(player -> {
+                                        try {
+                                            return locale.getLocale(player).split("_")[0];
+                                        } catch (Exception e) {
+                                            throw new RuntimeException(e);
+                                        }
+                                    })
                                     .setMessageSender((sender, mode, message) -> sender.sendMessage(message));
                             config.specify(CommandSender.class)
                                     .setLinguist(commandSender -> "en")
@@ -109,5 +121,17 @@ public final class Main extends JavaPlugin {
 
         cmdManager.setFormat(MessageType.HELP, ChatColor.DARK_AQUA, ChatColor.AQUA, ChatColor.GRAY, ChatColor.DARK_GRAY);
         cmdManager.registerCommand(new BukkitAnnouncerCommand());
+    }
+
+    private void setupLocale() {
+        double version = 0;
+        try {
+            version = Double.parseDouble(Bukkit.getBukkitVersion().split("-")[0].replaceFirst("1\\.", ""));
+        } catch (Exception ignored) {}
+
+        if (version > 8.8) // > 1.8.8
+            locale = new LocaleSpigot();
+        else
+            locale = new LocaleCraftBukkit();
     }
 }
