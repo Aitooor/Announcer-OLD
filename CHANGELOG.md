@@ -1,3 +1,20 @@
+# [1.3.0](https://github.com/Nasgar-Network/Announcer/compare/v1.2.4...v1.3.0) (2022-12-22)
+
+
+### Bug Fixes
+
+* added iLocale to execute and view announcements methods ([e0d87fd](https://github.com/Nasgar-Network/Announcer/commit/e0d87fd3c52f9f4025b1697b7c31ae051e2eb367))
+
+
+### Features
+
+* adding NMS for nMessage ([9c0aef0](https://github.com/Nasgar-Network/Announcer/commit/9c0aef0dbf81899c412906ddbf77bd0730cbc450))
+
+
+### Performance Improvements
+
+* removed useless if statement ([b21fc98](https://github.com/Nasgar-Network/Announcer/commit/b21fc9829a48bb66053810227c2a0dc91d6e3dc0))
+
 ## [1.2.4](https://github.com/Nasgar-Network/Announcer/compare/v1.2.3...v1.2.4) (2022-12-21)
 
 
