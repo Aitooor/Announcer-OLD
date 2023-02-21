@@ -123,10 +123,11 @@ public final class Main extends JavaPlugin {
             version = Double.parseDouble(Bukkit.getBukkitVersion().split("-")[0].replaceFirst("1\\.", ""));
         } catch (Exception ignored) {}
 
-        if (version > 8.8) // > 1.8.8
+        if (version > 8.8) { // > 1.8.8
             locale = new LocaleSpigot();
-        else
+        } else {
             locale = new LocaleCraftBukkit();
+        }
     }
 
     public static String getLocale(Player p) {
