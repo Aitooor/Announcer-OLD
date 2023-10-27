@@ -31,7 +31,7 @@ group project.property("group")
 
 bungee {
     name project.property("pluginName")
-    description 'Announcer plugin for Nasgar Network'
+    description 'Announcer plugin for Spigot and Proxy'
     version project.property("version")
     author project.property("author")
 }
